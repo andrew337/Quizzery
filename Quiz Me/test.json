@@ -1,0 +1,95 @@
+
+  {
+    "category": "Arts & Literature",
+    "id": "622a1c397cc59eab6f950f28",
+    "correctAnswer": "Hans Christian Andersen",
+    "incorrectAnswers": [
+      "Beatrix Potter",
+      "Søren Kierkegaard",
+      "Oscar Wilde"
+    ],
+    "question": "Which author wrote 'The Snow Queen'?",
+    "tags": [
+      "childrens_literature",
+      "literature",
+      "arts_and_literature"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "hard",
+    "regions": []
+  },
+  {
+    "category": "Arts & Literature",
+    "id": "622a1c357cc59eab6f94fd42",
+    "correctAnswer": "Edvard Munch",
+    "incorrectAnswers": [
+      "Otto Dix",
+      "Anita Malfatti",
+      "Franz Marc"
+    ],
+    "question": "\"The Scream\" was painted by which artist?",
+    "tags": [
+      "art",
+      "painting",
+      "people",
+      "arts_and_literature"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "hard",
+    "regions": []
+  },
+  {
+    "category": "Arts & Literature",
+    "id": "622a1c347cc59eab6f94fa33",
+    "correctAnswer": "Realism",
+    "incorrectAnswers": [
+      "Suprematism",
+      null,
+      "Modernism"
+    ],
+    "question": "The painting \"Olympia\" by Édouard Manet is a part of which art movement?",
+    "tags": [
+      "painting",
+      "art"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "hard",
+    "regions": []
+  },
+  {
+    "category": "Arts & Literature",
+    "id": "622a1c347cc59eab6f94f9f3",
+    "correctAnswer": "‎‎Johannes Vermeer",
+    "incorrectAnswers": [
+      "Georges Seurat",
+      "‎Pablo Picasso",
+      "Jackson Pollock"
+    ],
+    "question": "Which artist painted \"Girl with a Pearl Earring\"",
+    "tags": [
+      "art",
+      "painting",
+      "arts_and_literature"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "medium",
+    "regions": []
+  },
+  {
+    "category": "Arts & Literature",
+    "id": "622a1c367cc59eab6f9501ba",
+    "correctAnswer": "Through the Looking-Glass",
+    "incorrectAnswers": [
+      "Mio, My Son",
+      "Jonathan Strange & Mr Norrell",
+      "The Stand"
+    ],
+    "question": "Which piece of written work starts with the line 'One thing was certain, that the white kitten had had nothing to do with it: — it was the black kitten’s fault entirely.'?",
+    "tags": [
+      "arts_and_literature"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "hard",
+    "regions": []
+  }
+]
