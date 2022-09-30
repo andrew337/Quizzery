@@ -58,7 +58,6 @@ class CategoryCollectionViewCell: UICollectionViewCell {
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
             titleLabel.heightAnchor.constraint(equalToConstant: 25)
         ])
-        
     }
     func updateTitle(oldName : String?) -> String {
         
@@ -70,5 +69,4 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         let newNameUpper = newName.uppercased()
         return newNameUpper
     }
-    
 }

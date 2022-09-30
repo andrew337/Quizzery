@@ -23,8 +23,6 @@ struct Category : Codable {
     let societyCulture : [String]
     let sportLeisure : [String]
     
-        
-    
     enum CodingKeys : String, CodingKey {
         case artsLiterature = "Arts & Literature"
         case filmTV = "Film & TV"

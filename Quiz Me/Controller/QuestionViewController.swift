@@ -33,7 +33,7 @@ class QuestionViewController: UIViewController {
         label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
-        label.textColor = .black
+        label.textColor = .label
         return label
     }()
     
@@ -59,9 +59,10 @@ class QuestionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NetworkManager.shared.getQuestion(categoryName: category) { [weak self] questions in
-            self?.questions = questions
-            self?.getNextQuestion(newIndex: 0)
+            
             DispatchQueue.main.async {
+                self?.questions = questions
+                self?.getNextQuestion(newIndex: 0)
                 self?.title = self?.updateTitle(oldName: self?.category)
                 self?.configureUI()
                 self?.setup()
@@ -72,7 +73,7 @@ class QuestionViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationItem.setHidesBackButton(true, animated: true)
-        let textAttributes = [NSAttributedString.Key.foregroundColor : UIColor.black]
+        let textAttributes = [NSAttributedString.Key.foregroundColor : UIColor.label]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
     
@@ -88,11 +89,9 @@ class QuestionViewController: UIViewController {
         for i in 0..<shuffledArray.count {
             if shuffledArray[i] == correctAnswer {
                 answerTag = i
-                print(correctAnswer)
-                print(i)
             }
         }
-        
+    
         questionLabel.text = currentQuestion
         for answer in shuffledArray {
             let button = UIButton()
@@ -102,12 +101,12 @@ class QuestionViewController: UIViewController {
             button.layer.borderColor = UIColor.systemRed.cgColor
             button.titleLabel?.textAlignment = .center
             button.titleLabel?.font = .systemFont(ofSize: 15)
-            button.setTitleColor(.black, for: .normal)
+            button.setTitleColor(.label, for: .normal)
             button.titleLabel?.numberOfLines = 0
             button.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
             button.tag = tag
             tag += 1
-            button.backgroundColor = .secondarySystemFill
+            button.backgroundColor = .lightGray
             stackView.addArrangedSubview(button)
         }
     }
@@ -116,7 +115,7 @@ class QuestionViewController: UIViewController {
         view.addSubview(questionLabel)
         view.addSubview(stackView)
         view.addSubview(numberOfQuestionLabel)
-        view.backgroundColor = UIColor(red: 255, green: 250, blue: 150, alpha: 1)
+        view.backgroundColor = .systemBackground
         NSLayoutConstraint.activate([
             questionLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),
             questionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -135,69 +134,77 @@ class QuestionViewController: UIViewController {
         ])
     }
     
-    
     @objc private func buttonClicked(sender : UIButton!) {
         
         switch sender.tag {
         case 0 :
             self.stackView.toggleUserPressed()
-            sender.layer.borderWidth = 2
             if checkAnswer(answer: sender.titleLabel!.text!) {
                 score += 1
                 sender.layer.backgroundColor = UIColor.systemGreen.cgColor
             }
             else {
-              
-                let button = sender.viewWithTag(answerTag)
-                print(button)
+                sender.layer.backgroundColor = UIColor.systemRed.cgColor
+                stackView.subviews[answerTag].backgroundColor = .systemGreen
             }
-            self.animate(sender)
+            DispatchQueue.main.async {
+                self.animate(sender)
+            }
         case 1 :
             self.stackView.toggleUserPressed()
-            sender.layer.borderWidth = 2
             if checkAnswer(answer: sender.titleLabel!.text!) {
                 score += 1
                 sender.layer.backgroundColor = UIColor.systemGreen.cgColor
             }
             else {
-                let view = sender.viewWithTag(answerTag)
-                view?.layer.backgroundColor = UIColor.systemYellow.cgColor
+                sender.layer.backgroundColor = UIColor.systemRed.cgColor
+                stackView.subviews[answerTag].backgroundColor = .systemGreen
             }
-            sender.isUserInteractionEnabled = false
-            self.animate(sender)
+            DispatchQueue.main.async {
+                self.animate(sender)
+            }
         case 2 :
             self.stackView.toggleUserPressed()
-            sender.layer.borderWidth = 2
             if checkAnswer(answer: sender.titleLabel!.text!) {
                 score += 1
                 sender.layer.backgroundColor = UIColor.systemGreen.cgColor
             }
             else {
-                let view = sender.viewWithTag(answerTag)
-                view?.layer.backgroundColor = UIColor.systemYellow.cgColor
+                sender.layer.backgroundColor = UIColor.systemRed.cgColor
+                stackView.subviews[answerTag].backgroundColor = .systemGreen
             }
-            sender.isUserInteractionEnabled = false
-            self.animate(sender)
+            DispatchQueue.main.async {
+                self.animate(sender)
+            }
         case 3 :
             self.stackView.toggleUserPressed()
-            sender.layer.borderWidth = 2
             if checkAnswer(answer: sender.titleLabel!.text!) {
                 score += 1
-               sender.layer.backgroundColor = UIColor.systemGreen.cgColor
+                sender.layer.backgroundColor = UIColor.systemGreen.cgColor
             }
             else {
-                let view = sender.viewWithTag(answerTag)
-                view?.layer.backgroundColor = UIColor.systemYellow.cgColor
+                sender.layer.backgroundColor = UIColor.systemRed.cgColor
+                stackView.subviews[answerTag].backgroundColor = .systemGreen
             }
-            sender.isUserInteractionEnabled = false
-            self.animate(sender)
+            DispatchQueue.main.async {
+                self.animate(sender)
+            }
         default:
             break
         }
     }
     
-    @objc private func wrongButtonClicked() {
+    @objc private func wrongButtonClicked(sender : UIButton!) {
+        sender.layer.backgroundColor = UIColor.systemRed.cgColor
         
+        stackView.subviews[answerTag].backgroundColor = .systemGreen
+        
+    }
+    
+    @objc private func rightButtonClicked(sender : UIButton!) {
+        score += 1
+        sender.layer.backgroundColor = UIColor.systemGreen.cgColor
+        self.animate(sender)
     }
     
     private func animate(_ viewToAnimate : UIView) {

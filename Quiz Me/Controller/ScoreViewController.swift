@@ -33,7 +33,7 @@ class ScoreViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Home", for: .normal)
         button.layer.cornerRadius = 20
-        button.backgroundColor = .systemGreen
+        button.backgroundColor = .systemBlue
         button.layer.borderColor = UIColor.systemRed.cgColor
         button.titleLabel?.font = .systemFont(ofSize: 20)
         return button
@@ -77,13 +77,20 @@ class ScoreViewController: UIViewController {
     func getScoreText(with score : Int) {
         if score < 6 {
             view.backgroundColor = .systemRed
+            retryButton.backgroundColor = UIColor(red: 195/255, green: 214/255, blue: 50/255, alpha: 1)
+            //retryButton.backgroundColor = UIColor.systemBlue
+            scorelabel.textColor = UIColor(red: 87/255, green: 45/255, blue: 134/255, alpha: 1)
             scorelabel.text = "Your score is \(score). You didn't pass."
         }
         else if score > 7 {
             view.backgroundColor = .systemGreen
+            retryButton.backgroundColor = UIColor(red: 251/255, green: 255/255, blue: 0/255, alpha: 1)
+            scorelabel.textColor = UIColor(red: 255/255, green: 147/255, blue: 0/255, alpha: 1)
             scorelabel.text = "Your score is \(score). Great Job! Try another Category."
         } else {
             view.backgroundColor = .systemYellow
+            retryButton.backgroundColor = UIColor(red: 28/255, green: 214/255, blue: 206/255, alpha: 1)
+            scorelabel.textColor = UIColor(red: 41/255, green: 52/255, blue: 98/255, alpha: 1)
             scorelabel.text = "Your score is \(score). I suggest trying again. "
         }
     }

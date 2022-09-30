@@ -12,14 +12,11 @@ class NetworkManager {
     
     func getCategories(completion : @escaping (Category) -> Void) {
         let urlString = "https://the-trivia-api.com/api/categories"
-        
         guard let url = URL(string: urlString) else {
             print("something")
             return
         }
-        
         let task = URLSession.shared.dataTask(with: url) { data, _, _ in
-            
             guard let data = data else {
                 return
             }
@@ -30,7 +27,6 @@ class NetworkManager {
             } catch {
                 return
             }
-
         }
         task.resume()
     }
@@ -42,7 +38,6 @@ class NetworkManager {
             print("something")
             return
         }
-        
         let task = URLSession.shared.dataTask(with: url) { data, _, _ in
             
             guard let data = data else {
@@ -55,7 +50,6 @@ class NetworkManager {
             } catch {
                 return
             }
-
         }
         task.resume()
     }

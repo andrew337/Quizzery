@@ -19,7 +19,6 @@
 		84966B3428B935D0009DEDE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84966B3328B935D0009DEDE2 /* Assets.xcassets */; };
 		84966B3728B935D0009DEDE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84966B3528B935D0009DEDE2 /* LaunchScreen.storyboard */; };
 		84966B6528BD45C0009DEDE2 /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 84966B6428BD45C0009DEDE2 /* test.json */; };
-		84966B6728BD5150009DEDE2 /* QuestionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84966B6628BD5150009DEDE2 /* QuestionButton.swift */; };
 		84FDBCBE28CFE63C0077CA3D /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FDBCBD28CFE63C0077CA3D /* ScoreViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +37,6 @@
 		84966B3628B935D0009DEDE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84966B3828B935D0009DEDE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84966B6428BD45C0009DEDE2 /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
-		84966B6628BD5150009DEDE2 /* QuestionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionButton.swift; sourceTree = "<group>"; };
 		84FDBCBD28CFE63C0077CA3D /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,7 +63,6 @@
 		8460730F28BFECD7006AA43D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				84966B6628BD5150009DEDE2 /* QuestionButton.swift */,
 				843961F528BEE9A200070297 /* CategoryCollectionViewCell.swift */,
 			);
 			path = View;
@@ -201,7 +198,6 @@
 				84115FFD28D6892B00676DFB /* QuestionViewController.swift in Sources */,
 				8460731728C150CB006AA43D /* Question.swift in Sources */,
 				84115FFB28D544B300676DFB /* Extensions.swift in Sources */,
-				84966B6728BD5150009DEDE2 /* QuestionButton.swift in Sources */,
 				84966B2B28B935CD009DEDE2 /* AppDelegate.swift in Sources */,
 				84966B2D28B935CD009DEDE2 /* SceneDelegate.swift in Sources */,
 				843961F428BEA1B200070297 /* Category.swift in Sources */,
@@ -351,13 +347,15 @@
 				INFOPLIST_FILE = "Quiz Me/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.AndrewHolmes.Quiz-Me";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Andrew Holmes. Quizzery App";
@@ -380,13 +378,15 @@
 				INFOPLIST_FILE = "Quiz Me/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.AndrewHolmes.Quiz-Me";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Andrew Holmes. Quizzery App";
