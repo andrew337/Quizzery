@@ -30,7 +30,6 @@ class NetworkManager {
         }
         task.resume()
     }
-
     func getQuestion(categoryName : String , completion : @escaping ([Question]) -> Void) {
         let urlString = "https://the-trivia-api.com/api/questions?categories=\(categoryName)&limit=10&difficulty=easy"
         

@@ -60,11 +60,9 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         ])
     }
     func updateTitle(oldName : String?) -> String {
-        
         guard let oldName = oldName else {
             return ""
         }
-
         let newName = oldName.replacingOccurrences(of: "_", with: " ")
         let newNameUpper = newName.uppercased()
         return newNameUpper
