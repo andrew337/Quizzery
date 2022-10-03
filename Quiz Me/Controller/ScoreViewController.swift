@@ -38,7 +38,6 @@ class ScoreViewController: UIViewController {
         button.titleLabel?.font = .systemFont(ofSize: 20)
         return button
     }()
-
     
     var score : Int
     var category : String

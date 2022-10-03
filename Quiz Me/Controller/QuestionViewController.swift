@@ -116,10 +116,13 @@ class QuestionViewController: UIViewController {
         view.addSubview(stackView)
         view.addSubview(numberOfQuestionLabel)
         view.backgroundColor = .systemBackground
+        
+        let height = view.frame.size.height
+        
         NSLayoutConstraint.activate([
-            questionLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),
+            questionLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             questionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            questionLabel.heightAnchor.constraint(equalToConstant: 120),
+            questionLabel.heightAnchor.constraint(equalToConstant: height - (height * 0.80)),
             questionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -196,9 +199,7 @@ class QuestionViewController: UIViewController {
     
     @objc private func wrongButtonClicked(sender : UIButton!) {
         sender.layer.backgroundColor = UIColor.systemRed.cgColor
-        
         stackView.subviews[answerTag].backgroundColor = .systemGreen
-        
     }
     
     @objc private func rightButtonClicked(sender : UIButton!) {

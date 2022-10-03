@@ -17,6 +17,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         label.font = .systemFont(ofSize: 15)
         label.textColor = .label
         label.numberOfLines = 2
+        label.adjustsFontSizeToFitWidth = true
         label.textAlignment = .center
         return label
     }()
@@ -43,26 +44,24 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         imageView.contentMode = .scaleToFill
         contentView.addSubview(imageView)
         contentView.addSubview(titleLabel)
-        //imageView?.frame = contentView.bounds
         imageView?.image = UIImage(named: name)
         titleLabel.text = updateTitle(oldName: name)
         
+        let height = contentView.frame.size.height
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
             imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
             imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
-            imageView.heightAnchor.constraint(equalToConstant: 180),
+            imageView.heightAnchor.constraint(equalToConstant: height - (height * 0.25)),
             
             titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
-            titleLabel.heightAnchor.constraint(equalToConstant: 25)
+            titleLabel.heightAnchor.constraint(equalToConstant: height - (height * 0.75))
         ])
     }
     func updateTitle(oldName : String?) -> String {
-        guard let oldName = oldName else {
-            return ""
-        }
+        guard let oldName = oldName else { return "" }
         let newName = oldName.replacingOccurrences(of: "_", with: " ")
         let newNameUpper = newName.uppercased()
         return newNameUpper

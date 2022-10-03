@@ -44,13 +44,11 @@ class ViewController: UIViewController , UICollectionViewDelegate, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         let cell = self.collectionView.cellForItem(at: indexPath)!
         let category = arr[indexPath.item]
         let vc = QuestionViewController(category: category)
         
         UIView.animate(withDuration: 0.15, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.1, options: .curveEaseIn) {
-            
             cell.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
         } completion: { _ in
             UIView.animate(withDuration: 0.15, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 2, options: .curveEaseIn) {
@@ -60,5 +58,13 @@ class ViewController: UIViewController , UICollectionViewDelegate, UICollectionV
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }
+    }
+}
+
+extension ViewController : UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let height = view.frame.size.height - 10
+            let width = view.frame.size.width
+        return CGSize(width: width * 0.46, height: height / 3.2)
     }
 }
